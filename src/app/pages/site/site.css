@@ -1,0 +1,309 @@
+/* VASTORIA PROPERTY MANAGEMENT - SENIOR DESIGN COMPONENT STYLES */
+
+/* Custom Navigation Header */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+  z-index: 1040;
+}
+
+/* Senior Vector Logo Mark */
+.brand-logo-mark {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-brand:hover .brand-logo-mark {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.brand-title {
+  letter-spacing: -0.03em;
+  font-family: var(--font-heading);
+}
+
+.dot-accent {
+  color: #F59E0B !important;
+}
+
+.active-nav-link {
+  color: #0D9488 !important;
+  font-weight: 700;
+}
+
+.nav-link {
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #0D9488 !important;
+}
+
+/* Mobile Menu Drawer */
+.mobile-menu-drawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  display: none;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mobile-menu-drawer.show {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link {
+  color: #0F172A;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #0D9488;
+}
+
+/* REDESIGNED BACKGROUND IMAGE HERO SECTION (BRIGHT & CLEAR DUBAI ARCHITECTURE) */
+.hero-bg-section {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.55) 100%),
+              url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
+  padding: 95px 0 105px;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.45) 100%);
+  pointer-events: none;
+}
+
+.hero-main-heading {
+  line-height: 1.12;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.bg-white-10 {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.border-white-20 {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.hero-search-card {
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+}
+
+/* REDESIGNED CONTACT SECTION */
+.contact-info-card {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  border-radius: 24px;
+  padding: 44px;
+  color: #FFFFFF;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0D9488;
+  font-size: 1.25rem;
+}
+
+.contact-form-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
+}
+
+/* Service Cards */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
+  border-color: rgba(13, 148, 136, 0.3) !important;
+  background-color: #FFFFFF !important;
+}
+
+.service-icon-box {
+  border: 1px solid #F1F5F9;
+}
+
+/* Property Cards */
+.property-img-container {
+  height: 220px;
+}
+
+.property-img {
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-img {
+  transform: scale(1.06);
+}
+
+.property-card {
+  transition: all 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.12) !important;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-white {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+}
+
+.btn-white:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+}
+
+/* Step Cards */
+.step-card {
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.08) !important;
+}
+
+.step-num {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 2.2rem;
+  opacity: 0.15;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Custom Table */
+.custom-comparison-table th,
+.custom-comparison-table td {
+  border-color: #F1F5F9;
+}
+
+.bg-primary-subtle-light {
+  background-color: rgba(13, 148, 136, 0.04);
+}
+
+/* Utility Helpers */
+.fs-7 {
+  font-size: 0.875rem !important;
+}
+
+.fs-8 {
+  font-size: 0.775rem !important;
+}
+
+.fw-extrabold {
+  font-weight: 800 !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+.max-w-4xl {
+  max-width: 900px;
+}
+
+.max-w-2xl {
+  max-width: 680px;
+}
+
+.max-w-3xl {
+  max-width: 760px;
+}
+
+.min-h-300 {
+  min-height: 300px;
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+}
+
+.hover-text-white:hover {
+  color: #FFFFFF !important;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background-color: #0D9488 !important;
+  transform: translateY(-2px);
+}

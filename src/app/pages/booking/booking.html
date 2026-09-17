@@ -1,0 +1,101 @@
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+      <h2 class="fw-bold text-dark mb-1">Booking Management</h2>
+      <p class="text-muted fs-7 mb-0">Overview and scheduling of managed property reservations.</p>
+    </div>
+    <button class="btn btn-primary-accent text-white rounded-pill px-4 font-semibold fs-7" (click)="openBookingDialog()">
+      <i class="ri-add-line me-1"></i> Add Booking
+    </button>
+  </div>
+
+  <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+    <div class="table-responsive">
+      <table class="table align-middle mb-0">
+        <thead class="bg-light">
+          <tr>
+            <th class="py-3 px-4 fs-7 font-bold text-dark">Booking ID</th>
+            <th class="py-3 px-4 fs-7 font-bold text-dark">Customer Name</th>
+            <th class="py-3 px-4 fs-7 font-bold text-dark">Property</th>
+            <th class="py-3 px-4 fs-7 font-bold text-dark">Start Date</th>
+            <th class="py-3 px-4 fs-7 font-bold text-dark">End Date</th>
+            <th class="py-3 px-4 fs-7 font-bold text-dark">Status</th>
+            <th class="py-3 px-4 fs-7 font-bold text-dark text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of bookings()">
+            <td class="py-3 px-4 fw-bold text-dark fs-7">{{ b.bookingId }}</td>
+            <td class="py-3 px-4 text-dark fs-7">{{ b.customerName }}</td>
+            <td class="py-3 px-4 text-muted fs-7">{{ b.propertyName }}</td>
+            <td class="py-3 px-4 text-secondary fs-7">{{ b.startDate }}</td>
+            <td class="py-3 px-4 text-secondary fs-7">{{ b.endDate }}</td>
+            <td class="py-3 px-4">
+              <span class="badge border rounded-pill px-3 py-1 font-semibold fs-8" [ngClass]="getStatusBadgeClass(b.status)">
+                {{ b.status }}
+              </span>
+            </td>
+            <td class="py-3 px-4 text-end">
+              <button class="btn btn-sm btn-outline-dark me-1 rounded-pill" (click)="editBooking(b)">
+                <i class="ri-edit-line"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-danger rounded-pill" (click)="deleteBooking(b.bookingId)">
+                <i class="ri-delete-bin-line"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Add / Edit Modal -->
+<div class="modal-backdrop fade show" *ngIf="bookingDialog()" (click)="closeBookingDialog()"></div>
+<div class="modal fade show d-block" tabindex="-1" *ngIf="bookingDialog()" (click)="closeBookingDialog()">
+  <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+    <div class="modal-content rounded-4 border-0 shadow-lg p-3">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="fw-bold text-dark">{{ isEditMode() ? 'Edit Booking' : 'New Reservation' }}</h5>
+        <button type="button" class="btn-close" (click)="closeBookingDialog()"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label font-semibold fs-7">Customer Name</label>
+          <input type="text" class="form-control bg-light fs-7" [(ngModel)]="currentBooking.customerName">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label font-semibold fs-7">Property Name</label>
+          <input type="text" class="form-control bg-light fs-7" [(ngModel)]="currentBooking.propertyName">
+        </div>
+
+        <div class="row g-2 mb-3">
+          <div class="col-6">
+            <label class="form-label font-semibold fs-7">Start Date</label>
+            <input type="date" class="form-control bg-light fs-7" [(ngModel)]="currentBooking.startDate">
+          </div>
+          <div class="col-6">
+            <label class="form-label font-semibold fs-7">End Date</label>
+            <input type="date" class="form-control bg-light fs-7" [(ngModel)]="currentBooking.endDate">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label font-semibold fs-7">Status</label>
+          <select class="form-select bg-light fs-7" [(ngModel)]="currentBooking.status">
+            <option value="Confirmed">Confirmed</option>
+            <option value="Pending">Pending</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-light rounded-pill fs-7 font-semibold" (click)="closeBookingDialog()">Cancel</button>
+        <button type="button" class="btn btn-primary-accent text-white rounded-pill fs-7 font-semibold" (click)="saveBooking()">Save Booking</button>
+      </div>
+    </div>
+  </div>
+</div>

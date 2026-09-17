@@ -1,0 +1,73 @@
+<div class="login-page-wrapper">
+  <div id="container" [ngClass]="containerClass">
+    <!-- LOGIN PANEL -->
+    <div class="login">
+      <div class="content">
+        <h1>Log In</h1>
+        <form [formGroup]="userForm">
+          <input type="email" formControlName="username" placeholder="Email" />
+          <input type="password" formControlName="password" placeholder="Password" />
+          <div>
+            <label class="remember">
+              <input type="checkbox" checked /><span>Remember me</span>
+            </label>
+            <span class="forget"><a href="#">Forgot password?</a></span>
+            <span class="clearfix"></span>
+          </div>
+          <button type="button">Log In</button>
+        </form>
+
+        <span class="loginwith">Or Connect with</span>
+        <div class="social-icons">
+          <a href="#"><i class="ri-facebook-line ri-2x"></i></a>
+          <a href="#"><i class="ri-twitter-line ri-2x"></i></a>
+          <a href="#"><i class="ri-github-line ri-2x"></i></a>
+          <a href="#"><i class="ri-linkedin-line ri-2x"></i></a>
+        </div>
+
+        <span class="copy">&copy; {{ currentYear }}</span>
+      </div>
+    </div>
+
+    <!-- FRONT PAGE -->
+    <div class="page front">
+      <div class="content">
+        <i class="ri-user-line ri-4x"></i>
+        <h1>Hello, friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button type="button" (click)="showRegister()">
+          Register <i class="ri-arrow-right-line"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- BACK PAGE -->
+    <div class="page back">
+      <div class="content">
+        <i class="ri-login-box-line ri-4x"></i>
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button type="button" (click)="showLogin()">
+          <i class="ri-arrow-left-line"></i> Log In
+        </button>
+      </div>
+    </div>
+
+    <!-- REGISTER PANEL -->
+    <!-- <div class="register">
+      <div class="content">
+        <h1>Sign Up</h1>
+        <form>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <label class="remember">
+            <input type="checkbox" /> <span>I accept terms</span>
+          </label>
+          <span class="clearfix"></span>
+          <button type="button">Submit</button>
+        </form>
+      </div>
+    </div> -->
+  </div>
+</div>

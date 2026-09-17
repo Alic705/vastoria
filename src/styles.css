@@ -1,0 +1,310 @@
+/* Vastoria Property Management - Senior Designer Theme & Tokens */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --uh-primary: #0F172A;
+  --uh-primary-accent: #0D9488;
+  --uh-accent-hover: #0F766E;
+  --uh-gold: #F59E0B;
+  --uh-emerald: #10B981;
+  --uh-bg-light: #F8FAFC;
+  --uh-card-bg: #FFFFFF;
+  --uh-text-main: #0F172A;
+  --uh-text-muted: #64748B;
+  --uh-border: #E2E8F0;
+  --uh-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --uh-shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --uh-shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.12), 0 10px 15px -5px rgba(15, 23, 42, 0.06);
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--uh-text-main);
+  background-color: #FAFAFC;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Color & Gradient Utilities */
+.text-primary-accent {
+  color: #0D9488 !important;
+}
+
+.text-gold {
+  color: #F59E0B !important;
+}
+
+.btn-primary-accent {
+  background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+  border: none;
+  color: #FFFFFF !important;
+  transition: all 0.25s ease;
+}
+
+.btn-primary-accent:hover {
+  background: linear-gradient(135deg, #0F766E 0%, #115E59 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+}
+
+.bg-gradient-teal {
+  background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #0B0F19 0%, #111827 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Shared Senior Design & Footer Utilities */
+.btn-white {
+  background-color: #FFFFFF !important;
+  color: #0D9488 !important;
+  border: 1px solid #E2E8F0 !important;
+  font-weight: 700 !important;
+  display: inline-block;
+}
+
+.btn-white:hover {
+  background-color: #F8FAFC !important;
+  color: #0F766E !important;
+  border-color: #CBD5E1 !important;
+}
+
+.bg-white-10 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.border-white-10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.hover-text-white:hover {
+  color: #FFFFFF !important;
+}
+
+.fs-7 {
+  font-size: 0.875rem !important;
+}
+
+.fs-8 {
+  font-size: 0.775rem !important;
+}
+
+.fw-extrabold {
+  font-weight: 800 !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, #0D9488 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scoped Login 3D Component Container */
+.login-page-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  background: #e9ebee;
+  color: #1d2129;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1600px;
+  font-size: 65.2%;
+  position: relative;
+}
+
+.login-page-wrapper h1 {
+  font-weight: 700;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.login-page-wrapper form input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: .8em 0;
+  width: 100%;
+  font-size: 1.4em;
+}
+
+/* Shared Senior Navigation Header & Brand Logo Tokens */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+  z-index: 1040;
+}
+
+.brand-logo-mark {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-brand {
+  cursor: pointer !important;
+  gap: 0.65rem;
+}
+
+.navbar-brand:hover .brand-logo-mark {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.brand-title {
+  letter-spacing: -0.03em;
+  font-family: var(--font-heading);
+}
+
+.dot-accent {
+  color: #F59E0B !important;
+}
+
+.active-nav-link {
+  color: #0D9488 !important;
+  font-weight: 700;
+}
+
+.nav-link,
+.mobile-nav-link,
+.role-button,
+.cursor-pointer,
+a {
+  cursor: pointer !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.mobile-nav-link:hover {
+  color: #0D9488 !important;
+  cursor: pointer !important;
+}
+
+/* Mobile Menu Drawer */
+.mobile-menu-drawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  display: none;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mobile-menu-drawer.show {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link {
+  color: #0F172A;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #0D9488;
+}
+
+.login-page-wrapper #container {
+  width: 70vw;
+  height: 80vh;
+  position: relative;
+  border-radius: 2em;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,35 @@
+/* VALUATION INNER PAGE STYLES (MATCHING HOME HERO VIBRANT & CLEAR IMAGE) */
+
+.valuation-hero {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.55) 100%),
+              url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
+  padding: 95px 0 85px;
+}
+
+.valuation-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.45) 100%);
+  pointer-events: none;
+}
+
+.valuation-hero h1 {
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.bg-white-10 {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.border-white-20 {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.custom-faq-accordion .accordion-button:not(.collapsed) {
+  background-color: rgba(13, 148, 136, 0.08);
+  color: #0D9488;
+}
+
+.custom-faq-accordion .accordion-button:focus {
+  box-shadow: none;
+}

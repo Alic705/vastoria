@@ -1,0 +1,497 @@
+<!-- VASTORIA FREE PROPERTY VALUATION INNER PAGE -->
+
+<!-- HEADER / NAVIGATION BAR -->
+<header class="navbar navbar-expand-lg sticky-top custom-navbar py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center " routerLink="/">
+      <div class="brand-logo-mark">
+        <svg viewBox="0 0 36 36" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vastoriaTealGradValNav" x1="6" y1="4" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#14B8A6" />
+              <stop offset="100%" stop-color="#0D9488" />
+            </linearGradient>
+            <linearGradient id="vastoriaDarkGradValNav" x1="18" y1="6" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#0D9488" />
+              <stop offset="100%" stop-color="#0F766E" />
+            </linearGradient>
+          </defs>
+          <path d="M6 27L18 5L18 20L11 27H6Z" fill="url(#vastoriaTealGradValNav)" />
+          <path d="M18 5L30 27H25L18 20V5Z" fill="url(#vastoriaDarkGradValNav)" />
+          <path d="M18 16L21.5 21L18 26L14.5 21L18 16Z" fill="#F59E0B" />
+          <rect x="11" y="29.5" width="14" height="2.5" rx="1.25" fill="#0D9488" />
+        </svg>
+      </div>
+      <div>
+        <span class="fw-extrabold fs-4 tracking-tight text-dark brand-title">Vast<span
+            class="text-primary-accent">oria</span><span class="dot-accent">.</span></span>
+      </div>
+    </a>
+
+    <button class="navbar-toggler border-0 shadow-none" type="button" (click)="toggleMobileMenu()"
+      aria-label="Toggle navigation">
+      <i class="ri-menu-3-line fs-2 text-dark" *ngIf="!isMobileMenuOpen()"></i>
+      <i class="ri-close-line fs-2 text-dark" *ngIf="isMobileMenuOpen()"></i>
+    </button>
+
+    <div class="collapse navbar-collapse d-none d-lg-block">
+      <ul class="navbar-nav mx-auto gap-lg-3 fw-semibold">
+        <li class="nav-item"><a class="nav-link text-dark-emphasis" routerLink="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-dark-emphasis role-button"
+            (click)="navigateToSection('services', $event)">Services</a></li>
+        <li class="nav-item"><a class="nav-link text-dark-emphasis role-button"
+            (click)="navigateToSection('properties', $event)">Properties</a></li>
+        <li class="nav-item"><a class="nav-link text-dark-emphasis role-button"
+            (click)="navigateToSection('how-it-works', $event)">How It Works</a></li>
+        <li class="nav-item"><a class="nav-link text-dark-emphasis role-button"
+            (click)="navigateToSection('testimonials', $event)">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link text-dark active-nav-link" routerLink="/valuation">Free Valuation</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <!-- Client Portal Feature (Commented for future addition)
+        <a routerLink="/login" class="btn btn-outline-dark rounded-pill px-4 py-2 font-semibold fs-7">
+          <i class="ri-user-3-line me-1"></i> Client Portal
+        </a>
+        -->
+        <a routerLink="/valuation"
+          class="btn btn-primary-accent text-white rounded-pill px-4 py-2 font-semibold shadow-sm fs-7">
+          Free Valuation
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation Drawer -->
+  <div class="mobile-menu-drawer d-lg-none" [class.show]="isMobileMenuOpen()">
+    <div class="p-4 d-flex flex-column gap-3">
+      <a class="mobile-nav-link" routerLink="/" (click)="closeMobileMenu()">Home</a>
+      <a class="mobile-nav-link role-button"
+        (click)="navigateToSection('services', $event); closeMobileMenu()">Services</a>
+      <a class="mobile-nav-link role-button"
+        (click)="navigateToSection('properties', $event); closeMobileMenu()">Properties</a>
+      <a class="mobile-nav-link role-button" (click)="navigateToSection('how-it-works', $event); closeMobileMenu()">How
+        It Works</a>
+      <a class="mobile-nav-link role-button"
+        (click)="navigateToSection('testimonials', $event); closeMobileMenu()">Client Reviews</a>
+      <a class="mobile-nav-link fw-bold text-primary-accent" routerLink="/valuation" (click)="closeMobileMenu()">Free
+        Valuation Page</a>
+      <hr class="my-2 border-secondary-subtle">
+      <div class="d-grid gap-2">
+        <!-- Client Portal Feature (Commented for future addition)
+        <a routerLink="/login" (click)="closeMobileMenu()" class="btn btn-outline-dark rounded-pill py-2 text-center">
+          <i class="ri-user-3-line me-1"></i> Client Portal Login
+        </a>
+        -->
+        <a routerLink="/valuation" (click)="closeMobileMenu()"
+          class="btn btn-primary-accent text-white rounded-pill py-2 text-center">
+          Get Free Rental Valuation
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- SECTION 1: VALUATION INNER HERO SECTION -->
+  <section class="valuation-hero position-relative py-5 text-white overflow-hidden">
+    <div class="valuation-hero-overlay"></div>
+    <div class="container py-lg-4 position-relative z-1 text-center max-w-3xl mx-auto">
+      <div
+        class="d-inline-flex align-items-center gap-2 bg-white-10 border border-white-20 rounded-pill px-3 py-1 mb-3">
+        <span class="badge bg-warning text-dark rounded-pill"><i class="ri-vip-crown-fill me-1"></i> Free Service</span>
+        <span class="fs-7 font-semibold text-white">Instant AI-Driven Rental Yield Report</span>
+      </div>
+
+      <h1 class="display-4 fw-extrabold text-white mb-3">
+        Unlock Your Property's <span class="text-gradient-gold">True Market Rental Potential</span>
+      </h1>
+
+      <p class="lead text-white-50 fs-6 mb-4">
+        Receive an in-depth, data-backed rental valuation report comparing localized neighborhood comps, seasonal demand
+        metrics, and expected annual yield returns.
+      </p>
+
+      <div class="d-flex flex-wrap align-items-center justify-content-center gap-4 text-white-50 fs-7 font-semibold">
+        <span><i class="ri-checkbox-circle-fill text-success me-1"></i> 100% Free & Confidential</span>
+        <span><i class="ri-checkbox-circle-fill text-success me-1"></i> No Credit Card Required</span>
+        <span><i class="ri-checkbox-circle-fill text-success me-1"></i> Delivered in &lt; 2 Hours</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: COMPREHENSIVE VALUATION FORM SECTION -->
+  <section class="py-5 bg-light">
+    <div class="container py-lg-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card border-0 shadow-xl rounded-5 overflow-hidden">
+            <div class="row g-0">
+              <!-- Left Info Sidebar -->
+              <div class="col-md-4 bg-gradient-dark text-white p-4 p-md-5 d-flex flex-column justify-content-between">
+                <div>
+                  <span class="badge bg-teal-subtle text-teal rounded-pill  py-1 font-semibold mb-3 fs-8">What
+                    You'll Receive</span>
+                  <h3 class="fw-extrabold text-white fs-4 mb-4">Your Custom Property Report Includes:</h3>
+
+                  <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                    <li class="d-flex align-items-start gap-2 fs-7">
+                      <i class="ri-checkbox-circle-fill text-success fs-5 mt-n1"></i>
+                      <span><strong>Optimal Monthly Rent Rate</strong> calculated from recent comps.</span>
+                    </li>
+                    <li class="d-flex align-items-start gap-2 fs-7">
+                      <i class="ri-checkbox-circle-fill text-success fs-5 mt-n1"></i>
+                      <span><strong>Projected Occupancy & Cash Flow</strong> breakdown.</span>
+                    </li>
+                    <li class="d-flex align-items-start gap-2 fs-7">
+                      <i class="ri-checkbox-circle-fill text-success fs-5 mt-n1"></i>
+                      <span><strong>Recommended Value Add Upgrades</strong> for +15% rent boost.</span>
+                    </li>
+                    <li class="d-flex align-items-start gap-2 fs-7">
+                      <i class="ri-checkbox-circle-fill text-success fs-5 mt-n1"></i>
+                      <span><strong>Full Tenant Onboarding Strategy</strong> timeline.</span>
+                    </li>
+                  </ul>
+                </div>
+
+
+              </div>
+
+              <!-- Right Valuation Form -->
+              <div class="col-md-8 p-4 p-md-5 bg-white">
+                <!-- Confirmation Alert -->
+                <div class="alert alert-success rounded-4 p-4 text-center my-4" *ngIf="formSubmitted()">
+                  <i class="ri-checkbox-circle-fill display-3 text-success mb-2 d-block"></i>
+                  <h4 class="fw-extrabold text-dark fs-4">Valuation Request Submitted!</h4>
+                  <p class="text-muted fs-7 mb-3">
+                    Thank you, <strong>{{ valuationForm.fullName }}</strong>. Our valuation analysis team is evaluating
+                    <strong>{{ valuationForm.propertyAddress }}</strong>. Your complete PDF report will be emailed to
+                    <strong>{{ valuationForm.email }}</strong> within 2 hours.
+                  </p>
+                  <button class="btn btn-outline-dark rounded-pill px-4 py-2 font-semibold fs-7" (click)="resetForm()">
+                    Submit Another Property
+                  </button>
+                </div>
+
+                <!-- Form -->
+                <form (submit)="submitValuation($event)" *ngIf="!formSubmitted()">
+                  <div class="mb-4">
+                    <h3 class="fw-bold text-dark fs-4 mb-1">Property Valuation Request Form</h3>
+                    <p class="text-muted fs-7 mb-0">Fill out your property details to generate an accurate report.</p>
+                  </div>
+
+                  <!-- Step 1: Owner Details -->
+                  <h6 class="text-primary-accent fw-bold fs-7 text-uppercase tracking-wider mb-3">1. Owner Contact
+                    Information</h6>
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <label class="form-label font-semibold text-dark fs-7">Full Name *</label>
+                      <input type="text" class="form-control bg-light py-2 fs-7" placeholder="e.g. John Smith"
+                        [(ngModel)]="valuationForm.fullName" name="fullName" required>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label font-semibold text-dark fs-7">Email Address *</label>
+                      <input type="email" class="form-control bg-light py-2 fs-7" placeholder="john@example.com"
+                        [(ngModel)]="valuationForm.email" name="email" required>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label font-semibold text-dark fs-7">Phone Number</label>
+                      <input type="tel" class="form-control bg-light py-2 fs-7" placeholder="+1 (555) 000-0000"
+                        [(ngModel)]="valuationForm.phone" name="phone">
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label font-semibold text-dark fs-7">Preferred Contact Method</label>
+                      <select class="form-select bg-light py-2 fs-7" [(ngModel)]="valuationForm.preferredContact"
+                        name="preferredContact">
+                        <option value="email">Email PDF Report</option>
+                        <option value="phone">Phone Consultation</option>
+                        <option value="whatsapp">WhatsApp / SMS</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Step 2: Property Specs -->
+                  <h6 class="text-primary-accent fw-bold fs-7 text-uppercase tracking-wider mb-3">2. Property
+                    Specifications</h6>
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <label class="form-label font-semibold text-dark fs-7">Property Address *</label>
+                      <input type="text" class="form-control bg-light py-2 fs-7"
+                        placeholder="e.g. 742 Evergreen Terrace, Unit 3B" [(ngModel)]="valuationForm.propertyAddress"
+                        name="propertyAddress" required>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label font-semibold text-dark fs-7">Asset Category</label>
+                      <select class="form-select bg-light py-2 fs-7" [(ngModel)]="valuationForm.propertyType"
+                        name="propertyType">
+                        <option value="Single Family">Single Family Home</option>
+                        <option value="Multi-Family">Multi-Family Residence</option>
+                        <option value="Condo/Apartment">Condo / Luxury Apartment</option>
+                        <option value="Commercial">Commercial Retail / Office</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label font-semibold text-dark fs-7">Occupancy Status</label>
+                      <select class="form-select bg-light py-2 fs-7" [(ngModel)]="valuationForm.occupancyStatus"
+                        name="occupancyStatus">
+                        <option value="Vacant">Vacant (Ready to Lease)</option>
+                        <option value="Tenant Occupied">Tenant Occupied</option>
+                        <option value="Owner Occupied">Owner Occupied</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-4">
+                      <label class="form-label font-semibold text-dark fs-7">Bedrooms</label>
+                      <input type="number" class="form-control bg-light py-2 fs-7" min="0" max="20"
+                        [(ngModel)]="valuationForm.bedrooms" name="bedrooms">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label class="form-label font-semibold text-dark fs-7">Bathrooms</label>
+                      <input type="number" class="form-control bg-light py-2 fs-7" min="1" max="20"
+                        [(ngModel)]="valuationForm.bathrooms" name="bathrooms">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label class="form-label font-semibold text-dark fs-7">Square Footage</label>
+                      <input type="number" class="form-control bg-light py-2 fs-7" placeholder="e.g. 1800"
+                        [(ngModel)]="valuationForm.squareFeet" name="squareFeet">
+                    </div>
+                  </div>
+
+                  <button type="submit"
+                    class="btn btn-primary-accent text-white w-100 py-3 rounded-3 font-semibold fs-6 shadow-sm">
+                    Generate Free Valuation Report <i class="ri-arrow-right-line ms-1"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: VALUATION BENEFITS & FAQ SECTION -->
+  <section class="py-5 bg-white">
+    <div class="container py-lg-4">
+      <div class="text-center max-w-2xl mx-auto mb-5">
+        <span
+          class="badge bg-primary-subtle text-primary-accent rounded-pill px-3 py-1 font-semibold mb-2 fs-7">Valuation
+          FAQs</span>
+        <h2 class="display-6 fw-extrabold text-dark tracking-tight">Frequently Asked Questions</h2>
+        <p class="text-muted fs-6">Learn how our proprietary valuation engine estimates property yields with 98%
+          accuracy.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion custom-faq-accordion" id="faqAccordion">
+            <div class="accordion-item mb-3 rounded-4 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button font-bold text-dark fs-6" type="button" (click)="toggleFaq(0)">
+                  How is the rental valuation report calculated?
+                </button>
+              </h2>
+              <div class="accordion-collapse collapse" [class.show]="activeFaq() === 0">
+                <div class="accordion-body text-muted fs-7">
+                  Our algorithm analyzes real-time Dubai Land Department (DLD) transactions, active Ejari tenancy
+                  contracts, historical district occupancy trends, school/metro proximity, and amenity premium
+                  multipliers to calculate your exact optimal rental yield in AED.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 rounded-4 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button font-bold text-dark fs-6" type="button" (click)="toggleFaq(1)">
+                  Is this valuation report really 100% free with no obligation?
+                </button>
+              </h2>
+              <div class="accordion-collapse collapse" [class.show]="activeFaq() === 1">
+                <div class="accordion-body text-muted fs-7">
+                  Yes, absolutely! The valuation report is completely free with zero commitment. You can use the
+                  insights to evaluate your current rental income whether you choose to manage it yourself or partner
+                  with Vastoria.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 rounded-4 border overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button font-bold text-dark fs-6" type="button" (click)="toggleFaq(2)">
+                  How quickly will I receive my valuation report?
+                </button>
+              </h2>
+              <div class="accordion-collapse collapse" [class.show]="activeFaq() === 2">
+                <div class="accordion-body text-muted fs-7">
+                  Once you submit your property address and specifications, our automated valuation model generates your
+                  preliminary report within minutes, followed by a human review from a local portfolio advisor within 2
+                  business hours.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (LOCKED PRESERVED) -->
+<!-- REDESIGNED ULTRA-CLEAN CORPORATE FOOTER -->
+<footer class="bg-gradient-dark text-white pt-5 pb-4 border-top border-secondary-subtle">
+  <div class="container">
+    <!-- Top Verification & Desk Strip -->
+    <div class="p-4 rounded-4 bg-white-10 border border-white-10 mb-5">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-4 d-flex align-items-center gap-3">
+          <div class="p-3 rounded-3 bg-primary-subtle text-primary-accent fs-4">
+            <i class="ri-building-4-fill"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold text-white mb-0 fs-7">Dubai Advisory Desk</h6>
+            <span class="text-white-50 fs-8">Level 18, Boulevard Plaza 1, Downtown Dubai</span>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex align-items-center gap-3">
+          <div class="p-3 rounded-3 bg-warning-subtle text-warning fs-4">
+            <i class="ri-shield-check-fill"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold text-white mb-0 fs-7">DLD & RERA Licensed</h6>
+            <span class="text-white-50 fs-8">Registration License #784-RPM-2026</span>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-md-end">
+          <a routerLink="/valuation" class="btn btn-warning text-dark font-bold rounded-pill px-4 py-2 fs-7 shadow-sm">
+            Free Yield Calculator <i class="ri-arrow-right-line ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Grid -->
+    <div class="row g-4 mb-5">
+      <!-- Brand Column -->
+      <div class="col-lg-4">
+        <a class="d-flex align-items-center  mb-3 text-decoration-none" routerLink="/">
+          <div class="brand-logo-mark">
+            <svg viewBox="0 0 36 36" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="vastoriaTealGradValFoot" x1="6" y1="4" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#14B8A6" />
+                  <stop offset="100%" stop-color="#0D9488" />
+                </linearGradient>
+                <linearGradient id="vastoriaDarkGradValFoot" x1="18" y1="6" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0D9488" />
+                  <stop offset="100%" stop-color="#0F766E" />
+                </linearGradient>
+              </defs>
+              <path d="M6 27L18 5L18 20L11 27H6Z" fill="url(#vastoriaTealGradValFoot)" />
+              <path d="M18 5L30 27H25L18 20V5Z" fill="url(#vastoriaDarkGradValFoot)" />
+              <path d="M18 16L21.5 21L18 26L14.5 21L18 16Z" fill="#F59E0B" />
+              <rect x="11" y="29.5" width="14" height="2.5" rx="1.25" fill="#0D9488" />
+            </svg>
+          </div>
+          <span class="fw-extrabold fs-4 text-white brand-title">Vast<span
+              class="text-primary-accent">oria</span><span class="dot-accent">.</span></span>
+        </a>
+        <p class="text-white-50 fs-7 mb-4">
+          Dubai's premier technology-enabled property management & asset advisory platform. Optimizing rental yields,
+          Ejari onboarding, and 100% RERA compliant investor returns across UAE.
+        </p>
+        <div class="d-flex align-items-center gap-2">
+          <span
+            class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 font-semibold fs-8">
+            <i class="ri-checkbox-circle-fill me-1"></i> 100% Ejari Verified
+          </span>
+          <span
+            class="badge bg-info-subtle text-info border border-info-subtle rounded-pill px-3 py-1 font-semibold fs-8">
+            <i class="ri-shield-star-fill me-1"></i> RERA Approved
+          </span>
+        </div>
+      </div>
+
+      <!-- Prime Locations -->
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold text-white fs-7 text-uppercase tracking-wider mb-3">Prime Locations</h6>
+        <ul class="list-unstyled text-white-50 fs-7 d-flex flex-column gap-2 mb-0">
+          <li><a (click)="navigateToSection('properties', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Downtown Dubai</a></li>
+          <li><a (click)="navigateToSection('properties', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Palm Jumeirah</a></li>
+          <li><a (click)="navigateToSection('properties', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Dubai Marina</a></li>
+          <li><a (click)="navigateToSection('properties', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Business Bay</a></li>
+          <li><a (click)="navigateToSection('properties', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Dubai Hills Estate</a></li>
+          <li><a (click)="navigateToSection('properties', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">JBR Beachfront</a></li>
+        </ul>
+      </div>
+
+      <!-- Owner Solutions -->
+      <div class="col-6 col-lg-3">
+        <h6 class="fw-bold text-white fs-7 text-uppercase tracking-wider mb-3">Owner Solutions</h6>
+        <ul class="list-unstyled text-white-50 fs-7 d-flex flex-column gap-2 mb-0">
+          <li><a (click)="navigateToSection('services', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Tenant Vetting & Visa
+              Screening</a></li>
+          <li><a (click)="navigateToSection('services', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Automated Ejari Registration</a>
+          </li>
+          <li><a (click)="navigateToSection('services', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">Post-Dated Cheque Escrow</a></li>
+          <li><a (click)="navigateToSection('services', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">24/7 AC Emergency Maintenance</a>
+          </li>
+          <li><a (click)="navigateToSection('services', $event)"
+              class="text-white-50 hover-text-white text-decoration-none role-button">RERA Rental Index Shield</a></li>
+          <li><a routerLink="/valuation" class="text-white-50 hover-text-white text-decoration-none">Free Yield
+              Valuation Report</a></li>
+        </ul>
+      </div>
+
+      <!-- Instant Valuation Card -->
+      <div class="col-lg-3">
+        <div
+          class="p-4 rounded-4 bg-gradient-teal text-white shadow-lg d-flex flex-column justify-content-between h-100">
+          <div>
+            <span class="badge bg-white text-dark rounded-pill px-3 py-1 font-semibold fs-8 mb-2">Free Instant
+              Report</span>
+            <h5 class="fw-extrabold text-white fs-6 mb-2">Evaluate Your Dubai Property Yield</h5>
+            <p class="fs-8 text-white-80 mb-3">Get real-time market comps, optimal annual rent in AED, and RERA index
+              return projections in under 2 hours.</p>
+          </div>
+          <a routerLink="/valuation"
+            class="btn btn-white text-primary-accent font-bold w-100 py-2 rounded-3 fs-7 shadow-sm text-center">
+            Get Rental Valuation <i class="ri-arrow-right-line ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-white-10 my-4">
+
+    <!-- Bottom Bar -->
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between text-white-50 fs-8 gap-2">
+      <div>&copy; 2026 Vastoria Property Management Technologies FZ-LLC (RERA License #784-RPM-2026). All rights
+        reserved.</div>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-white-50 hover-text-white text-decoration-none">Privacy Policy</a>
+        <a href="#" class="text-white-50 hover-text-white text-decoration-none">Terms of Service</a>
+        <a href="#" class="text-white-50 hover-text-white text-decoration-none">RERA Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
