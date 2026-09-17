@@ -10,7 +10,7 @@ import { filter } from 'rxjs';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Vastoria Property Management');
+  protected readonly title = signal('UrbanHaven Property Management');
   private router = inject(Router);
 
   constructor() {

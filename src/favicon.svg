@@ -1,16 +1,6 @@
 <svg viewBox="0 0 36 36" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="vastoriaTealGrad" x1="6" y1="4" x2="30" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#14B8A6" />
-      <stop offset="100%" stop-color="#0D9488" />
-    </linearGradient>
-    <linearGradient id="vastoriaDarkGrad" x1="18" y1="6" x2="30" y2="28" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0D9488" />
-      <stop offset="100%" stop-color="#0F766E" />
-    </linearGradient>
-  </defs>
-  <path d="M6 27L18 5L18 20L11 27H6Z" fill="url(#vastoriaTealGrad)" />
-  <path d="M18 5L30 27H25L18 20V5Z" fill="url(#vastoriaDarkGrad)" />
-  <path d="M18 16L21.5 21L18 26L14.5 21L18 16Z" fill="#F59E0B" />
-  <rect x="11" y="29.5" width="14" height="2.5" rx="1.25" fill="#0D9488" />
+  <path d="M6 18L18 8L30 18" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M12 17.5V27" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M24 17.5V27" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M12 22.5H24" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" />
 </svg>

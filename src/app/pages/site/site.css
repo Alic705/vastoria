@@ -1,4 +1,4 @@
-/* VASTORIA PROPERTY MANAGEMENT - SENIOR DESIGN COMPONENT STYLES */
+/* URBANHAVEN PROPERTY MANAGEMENT - SENIOR DESIGN COMPONENT STYLES */
 
 /* Custom Navigation Header */
 .custom-navbar {
@@ -92,7 +92,7 @@
 .hero-bg-section {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.55) 100%),
               url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
-  padding: 95px 0 105px;
+  padding: clamp(55px, 8.5vw, 105px) 0;
 }
 
 .hero-bg-overlay {
@@ -240,9 +240,14 @@
 }
 
 /* Custom Table */
+.custom-comparison-table {
+  min-width: 620px;
+}
+
 .custom-comparison-table th,
 .custom-comparison-table td {
   border-color: #F1F5F9;
+  white-space: normal;
 }
 
 .bg-primary-subtle-light {
@@ -306,4 +311,112 @@
 .social-btn:hover {
   background-color: #0D9488 !important;
   transform: translateY(-2px);
+}
+
+/* Responsive Component Refinements */
+@media (max-width: 991.98px) {
+  .hero-main-heading {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-main-heading {
+    font-size: 2.2rem;
+  }
+
+  .property-img-container {
+    height: 200px;
+  }
+
+  .modal-dialog {
+    margin: 0.75rem;
+  }
+
+  .modal-body img {
+    height: 210px !important;
+    min-height: auto !important;
+    width: 100%;
+  }
+
+  .step-card {
+    padding: 1.25rem !important;
+  }
+
+  .step-num {
+    font-size: 1.75rem;
+    top: 12px;
+    right: 14px;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1.5rem !important;
+  }
+}
+
+.hero-badge-pill {
+  border-radius: 50rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.hero-lead-description {
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+@media (max-width: 767.98px) {
+  .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.62) 0%, rgba(15, 23, 42, 0.8) 100%) !important;
+  }
+
+  .hero-lead-description {
+    color: #FFFFFF !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 500 !important;
+    padding: 0 0.5rem;
+  }
+
+  .hero-trust-strip {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-main-heading {
+    font-size: 1.85rem;
+  }
+
+  .property-img-container {
+    height: 185px;
+  }
+
+  .hero-badge-pill {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-badge-pill .badge {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1.25rem !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-main-heading {
+    font-size: 1.65rem;
+  }
 }

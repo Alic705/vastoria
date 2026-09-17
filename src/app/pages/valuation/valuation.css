@@ -3,7 +3,7 @@
 .valuation-hero {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.55) 100%),
               url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
-  padding: 95px 0 85px;
+  padding: clamp(55px, 8vw, 95px) 0 clamp(45px, 7vw, 85px);
 }
 
 .valuation-hero-overlay {
@@ -15,6 +15,7 @@
 
 .valuation-hero h1 {
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
 }
 
 .bg-white-10 {
@@ -33,3 +34,57 @@
 .custom-faq-accordion .accordion-button:focus {
   box-shadow: none;
 }
+
+.hero-badge-pill {
+  border-radius: 50rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.valuation-lead-description {
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+@media (max-width: 767.98px) {
+  .valuation-hero-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.62) 0%, rgba(15, 23, 42, 0.8) 100%) !important;
+  }
+
+  .valuation-lead-description {
+    color: #FFFFFF !important;
+    font-size: 0.975rem !important;
+    line-height: 1.65 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 500 !important;
+    padding: 0 0.5rem;
+  }
+
+  .valuation-hero .text-white {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-badge-pill {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-badge-pill .badge {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1.25rem !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  }
+}
+
+

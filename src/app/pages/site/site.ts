@@ -349,7 +349,7 @@ export class Site {
       name: 'Tariq Al-Mansoor',
       role: 'Emirati Property Investor',
       avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
-      content: 'Vastoria completely transformed how I manage my 8 luxury apartments across Downtown Dubai and Dubai Marina. They handle automated Ejari registration, tenant background checks, and annual post-dated cheque clearances seamlessly. My net rental yield increased by 1.8% in the first year.',
+      content: 'UrbanHaven completely transformed how I manage my 8 luxury apartments across Downtown Dubai and Dubai Marina. They handle automated Ejari registration, tenant background checks, and annual post-dated cheque clearances seamlessly. My net rental yield increased by 1.8% in the first year.',
       propertiesCount: '8 Prime Dubai Units',
       rating: 5,
       location: 'Downtown Dubai & Marina'
@@ -359,7 +359,7 @@ export class Site {
       name: 'Sarah Jenkins',
       role: 'UK Expat Investor',
       avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-      content: 'As an overseas landlord living in London, managing my Palm Jumeirah and Business Bay villas was a constant headache until I partnered with Vastoria. Monthly rent deposits land directly in my UAE bank account on the 1st of every month without fail, and maintenance issues are handled 24/7.',
+      content: 'As an overseas landlord living in London, managing my Palm Jumeirah and Business Bay villas was a constant headache until I partnered with UrbanHaven. Monthly rent deposits land directly in my UAE bank account on the 1st of every month without fail, and maintenance issues are handled 24/7.',
       propertiesCount: '4 Palm & Bay Villas',
       rating: 5,
       location: 'Palm Jumeirah & Business Bay'
